@@ -25,18 +25,20 @@ class PrintAsteriskTest {
 
     @Test
     void testDiamondAsterisk() {
-        assertEquals("", PrintAsterisk.printDiamondAsterisk(0));
-        assertEquals("*\n\n", PrintAsterisk.printDiamondAsterisk(1));
-        assertEquals("  *\n\n ***\n\n*****\n\n ***\n\n  *\n\n", PrintAsterisk.printDiamondAsterisk(3));
-        assertEquals("    *\n\n   ***\n\n  *****\n\n *******\n\n*********\n\n *******\n\n  *****\n\n   ***\n\n    *\n\n", PrintAsterisk.printDiamondAsterisk(5));
+        assertEquals("", PrintAsterisk.printDiamondAsterisk(0,""));
+        assertEquals("*\n\n", PrintAsterisk.printDiamondAsterisk(1,""));
+        assertEquals(" *\n\n***\n\n *\n\n", PrintAsterisk.printDiamondAsterisk(2,""));
+        assertEquals("  *\n\n ***\n\n*****\n\n ***\n\n  *\n\n", PrintAsterisk.printDiamondAsterisk(3,""));
+        assertEquals("    *\n\n   ***\n\n  *****\n\n *******\n\n*********\n\n *******\n\n  *****\n\n   ***\n\n    *\n\n", PrintAsterisk.printDiamondAsterisk(5,""));
     }
 
     @Test
     void testDiamondWithNameAsterisk() {
-        assertEquals("", PrintAsterisk.printDiamondAsterisk(0));
-        assertEquals("*\n\n", PrintAsterisk.printDiamondAsterisk(1));
-        assertEquals("  *\n\n ***\n\n*****\n\n ***\n\n  *\n\n", PrintAsterisk.printDiamondAsterisk(3));
-        assertEquals("    *\n\n   ***\n\n  *****\n\n *******\n\n*********\n\n *******\n\n  *****\n\n   ***\n\n    *\n\n", PrintAsterisk.printDiamondAsterisk(5));
+        assertEquals("", PrintAsterisk.printDiamondAsterisk(0, "Jasmine"));
+        assertEquals("Jasmine\n\n", PrintAsterisk.printDiamondAsterisk(1, "Jasmine"));
+        assertEquals(" *\n\nJasmine\n\n *\n\n", PrintAsterisk.printDiamondAsterisk(2, "Jasmine"));
+        assertEquals("  *\n\n ***\n\nJasmine\n\n ***\n\n  *\n\n", PrintAsterisk.printDiamondAsterisk(3, "Jasmine"));
+        assertEquals("    *\n\n   ***\n\n  *****\n\n *******\n\nJasmine\n\n *******\n\n  *****\n\n   ***\n\n    *\n\n", PrintAsterisk.printDiamondAsterisk(5,"Jasmine"));
     }
 
 //    @org.junit.jupiter.api.Test

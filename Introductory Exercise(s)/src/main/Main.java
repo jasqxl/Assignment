@@ -17,7 +17,10 @@ public class Main {
         System.out.println("\n" + PrintAsterisk.printMultipleLines(3, true));
 
         System.out.println("\nPrint a diamond asterisk (5 levels):");
-        System.out.println("\n" + PrintAsterisk.printDiamondAsterisk(5));
+        System.out.println("\n" + PrintAsterisk.printDiamondAsterisk(5,""));
+
+        System.out.println("\nPrint a diamond asterisk with name (4 levels):");
+        System.out.println("\n" + PrintAsterisk.printDiamondAsterisk(4,"Jasmine"));
 
     }
 }

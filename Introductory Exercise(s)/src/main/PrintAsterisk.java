@@ -26,16 +26,36 @@ public class PrintAsterisk {
         return 1;
     }
 
-    public static String printDiamondAsterisk(int numberOfLinesToPrint) {
-        String printToConsole = "";
+    public static String printDiamondAsterisk(int numberOfLinesToPrint, String name) {
+        String printToConsole = "", newLine = "";
         int maxAsterisk = (2*numberOfLinesToPrint)-1, asteriskPerLine = 0;
 
         for (int i = 1; i <= numberOfLinesToPrint + numberOfLinesToPrint - 1; i++) {
 
-            if (i <= numberOfLinesToPrint) asteriskPerLine = (2*i)-1;
-            else asteriskPerLine = asteriskPerLine - 2;
+            if (i < numberOfLinesToPrint) {
+                asteriskPerLine = (2 * i) - 1;
+                newLine = "";
+            }
+            else if (i == numberOfLinesToPrint && name.length() == 0) {
+                asteriskPerLine = (2*i)-1;
+                newLine = "";
+            }
+            else  if (i == numberOfLinesToPrint && name.length() != 0) {
+                asteriskPerLine = 0;
+                newLine = name;
+            }
+            else {
+                asteriskPerLine = asteriskPerLine - 2;
+                newLine = "";
+            }
 
-            printToConsole = printToConsole + printBlanks((maxAsterisk-asteriskPerLine)/2) + printSingleLine(asteriskPerLine) + "\n\n";
+            if (asteriskPerLine == 0) {
+                printToConsole = printToConsole + newLine + printBlanks(0) + printSingleLine(asteriskPerLine) + "\n\n";
+                asteriskPerLine = maxAsterisk;
+            }
+            else {
+                printToConsole = printToConsole + newLine + printBlanks((maxAsterisk-asteriskPerLine)/2) + printSingleLine(asteriskPerLine) + "\n\n";
+            }
         }
 
         return printToConsole;

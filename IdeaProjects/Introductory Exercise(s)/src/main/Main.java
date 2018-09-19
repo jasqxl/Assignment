@@ -22,5 +22,7 @@ public class Main {
         System.out.println("\nPrint a diamond asterisk with name (4 levels):");
         System.out.println("\n" + PrintAsterisk.printDiamondAsterisk(4,"Jasmine"));
 
+        System.out.println("\nFizz or Buzz:");
+        FizzBuzz.fizzBuzz();
     }
 }
